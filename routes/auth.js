@@ -8,7 +8,7 @@ const isLogin = require('../middlewares/isLogin');
 // Login route
 router.post('/login', express.json(), loginUser);
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     res.render('login');
 });
 router.get('/home', isLogin, (req, res) => {
