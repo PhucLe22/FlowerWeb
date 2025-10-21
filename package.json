@@ -1,0 +1,35 @@
+{
+  "name": "flowerweb",
+  "version": "1.0.0",
+  "description": "FlowerWeb - A beautiful 20/10 celebration website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhucLe22/FlowerWeb.git"
+  },
+  "keywords": [
+    "20/10",
+    "flower",
+    "celebration",
+    "womens-day"
+  ],
+  "author": "Phuc Le",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "express-session": "^1.18.2",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

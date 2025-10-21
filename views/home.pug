@@ -1,0 +1,127 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Flower Animation 20/10
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .flower-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        perspective: 1000px;
+      }
+      .flower-wrapper {
+        position: relative;
+        cursor: pointer;
+      }
+      .flower {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      .flower-wrapper:hover .flower {
+        transform: scale(1.4) rotate(360deg);
+      }
+      .petal {
+        position: absolute;
+        width: 100px;
+        height: 150px;
+        background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+        border-radius: 50% 50% 50% 0%;
+        transform-origin: bottom center;
+        box-shadow: 0 0 25px rgba(255, 107, 157, 0.6);
+        transition: all 0.8s ease;
+      }
+      .petal:nth-child(1) { transform: rotate(0deg) translateY(-80px); background: linear-gradient(135deg, #ff6b9d, #ffa8c5); }
+      .petal:nth-child(2) { transform: rotate(45deg) translateY(-80px); background: linear-gradient(135deg, #ff8fab, #ffb6d9); }
+      .petal:nth-child(3) { transform: rotate(90deg) translateY(-80px); background: linear-gradient(135deg, #ffa3ba, #ffc4e1); }
+      .petal:nth-child(4) { transform: rotate(135deg) translateY(-80px); background: linear-gradient(135deg, #ffb7c8, #ffd2e9); }
+      .petal:nth-child(5) { transform: rotate(180deg) translateY(-80px); background: linear-gradient(135deg, #ffcbd6, #ffe0f0); }
+      .petal:nth-child(6) { transform: rotate(225deg) translateY(-80px); background: linear-gradient(135deg, #ffdfe4, #ffeef5); }
+      .petal:nth-child(7) { transform: rotate(270deg) translateY(-80px); background: linear-gradient(135deg, #ff9bb3, #ffcfdf); }
+      .petal:nth-child(8) { transform: rotate(315deg) translateY(-80px); background: linear-gradient(135deg, #ff7d9f, #ffb8d2); }
+
+      .flower-wrapper:hover .petal {
+        box-shadow: 0 0 40px rgba(255, 107, 157, 0.9);
+        transform: scale(1.2);
+        animation: sparkle 1.5s infinite;
+      }
+
+      @keyframes sparkle {
+        0%, 100% { filter: brightness(1); }
+        50% { filter: brightness(1.5); }
+      }
+
+      .center {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle, #ffd93d 0%, #f9a825 100%);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 30px rgba(249, 168, 37, 0.6);
+        transition: all 0.8s ease;
+        z-index: 10;
+      }
+      .flower-wrapper:hover .center {
+        box-shadow: 0 0 50px rgba(255, 217, 61, 0.9);
+        animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); }
+        50% { transform: translate(-50%, -50%) scale(1.15); }
+      }
+      .message {
+        margin-top: 2rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: white;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        text-align: center;
+      }
+      .flower-wrapper:hover + .message {
+        opacity: 1;
+        transform: translateY(0);
+        animation: shimmer 2s infinite;
+      }
+      @keyframes shimmer {
+        0%, 100% { text-shadow: 2px 2px 6px rgba(0,0,0,0.4); }
+        50% { text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.6); }
+      }
+  body
+    .flower-container
+      .flower-wrapper
+        .flower
+          .petal
+          .petal
+          .petal
+          .petal
+          .petal
+          .petal
+          .petal
+          .petal
+          .center
+      .message Bae, wish you be daily in 20/10 anniversary not only true date yearly
